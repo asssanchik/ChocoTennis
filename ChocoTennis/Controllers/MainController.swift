@@ -17,7 +17,7 @@ class MainController: UIViewController {
     }
     
     @IBAction func goDidClick(_ sender: UIButton) {
-        let mathScene = MathController()
+        let mathScene = MathController(player1: player1, player2: player2)
         mathScene.modalPresentationStyle = .fullScreen
         present(mathScene, animated: true)
         
