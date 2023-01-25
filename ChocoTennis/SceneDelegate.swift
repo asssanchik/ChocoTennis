@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         // создал окно по размерам устройства
         window = UIWindow(windowScene: scene )
-        print("Hello")
         // это основной контролер который создал
         window?.rootViewController = MainController()
         // это сделает его доступным

@@ -65,7 +65,7 @@ class MathController: UIViewController {
         let currentDate = Date()
         // это разница во времени, между текущем и тем что у нас сохранилось
         let diff = currentDate.timeIntervalSince1970 - math!.createdAt.timeIntervalSince1970
-        var d = floor(diff * 100) / 100
+        let d = floor(diff * 100) / 100
         timer1Label.text = String(d)
         timer2Label.text = String(d)
         
@@ -81,6 +81,4 @@ class MathController: UIViewController {
             completedAt: Date()
         )
     }
-    
-
 }
