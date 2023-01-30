@@ -5,6 +5,7 @@
 //  Created by Assan on 18.01.2023.
 //
 import UIKit
+import CoreData
 
 
 class MathController: UIViewController {
@@ -15,11 +16,21 @@ class MathController: UIViewController {
     @IBOutlet weak var timer1Label: UILabel!
     @IBOutlet weak var timer2Label: UILabel!
     
-    var math: Math?
+    lazy var container: NSPersistentContainer = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer
+    }()
     
-    init(player1: User, player2: User) {
+    var player1: UserMO
+    var player2: UserMO
+    var point1 = 0
+    var point2 = 0
+    var createdAt = Date()
+        
+    init(player1: UserMO, player2: UserMO) {
+        self.player1 = player1
+        self.player2 = player2
         super.init(nibName: nil, bundle: nil)
-        setupMath(player1: player1, player2: player2)
     }
     
     required init?(coder: NSCoder) {
@@ -39,9 +50,9 @@ class MathController: UIViewController {
     @IBAction func counterDidClick(_ sender: UIControl) {
         switch sender.tag {
         case -1:
-            math?.point1 += 1
+            point1 += 1
         case 1:
-            math?.point2 += 1
+            point2 += 1
         default:
             break
         }
@@ -49,14 +60,23 @@ class MathController: UIViewController {
         
         
         // в случае превышение очков больше чем 11, переносимся на главный экран
-        if math!.point1 >= 11 || math!.point2 >= 11 {
-            math!.completedAt = Date()
+        if point1 >= 11 || point2 >= 11 {
+            let context = container.viewContext
+            let matchMo = NSEntityDescription.insertNewObject(forEntityName: "Match", into: context) as! MatchMO
+            matchMo.playerUUID1 = player1.uuid
+            matchMo.playerUUID2 = player2.uuid
+            matchMo.point1 = Int16(point1)
+            matchMo.point2 = Int16(point2)
+            matchMo.createdAt = createdAt
+            matchMo.completedAt = Date()
+            
+            try! context.save()
             dismiss(animated: true)
-            // как идея после завершения матча выводить победителя
         }
+        
 
-        counterForPlayer1.text = String(math!.point1)
-        counterForPlayer2.text = String(math!.point2)
+        counterForPlayer1.text = String(point1)
+        counterForPlayer2.text = String(point2)
         
     }
     
@@ -64,21 +84,11 @@ class MathController: UIViewController {
         // это текущее время
         let currentDate = Date()
         // это разница во времени, между текущем и тем что у нас сохранилось
-        let diff = currentDate.timeIntervalSince1970 - math!.createdAt.timeIntervalSince1970
+        let diff = currentDate.timeIntervalSince1970 - createdAt.timeIntervalSince1970
         let d = floor(diff * 100) / 100
         timer1Label.text = String(d)
         timer2Label.text = String(d)
         
     }
 
-    func setupMath(player1: User, player2: User) {
-        math = Math(
-            player1: player1,
-            player2: player2,
-            point1: 0,
-            point2: 0,
-            createdAt: Date(),
-            completedAt: Date()
-        )
-    }
 }

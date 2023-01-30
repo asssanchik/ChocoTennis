@@ -13,8 +13,6 @@
 		DA60E188297817C300D7A50C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA60E186297817C300D7A50C /* LaunchScreen.storyboard */; };
 		DA60E191297818D000D7A50C /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60E190297818D000D7A50C /* Main.xib */; };
 		DA60E193297818E800D7A50C /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E192297818E800D7A50C /* MainController.swift */; };
-		DA60E1972978226900D7A50C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E1962978226900D7A50C /* User.swift */; };
-		DA60E199297822A800D7A50C /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E198297822A800D7A50C /* Math.swift */; };
 		DA60E19B297829AC00D7A50C /* MathController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E19A297829AC00D7A50C /* MathController.swift */; };
 		DA60E19D297829CB00D7A50C /* Math.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60E19C297829CB00D7A50C /* Math.xib */; };
 		DAB324252981559200448CCE /* ChocoTennis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAB324232981559200448CCE /* ChocoTennis.xcdatamodeld */; };
@@ -31,8 +29,6 @@
 		DA60E189297817C300D7A50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA60E190297818D000D7A50C /* Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
 		DA60E192297818E800D7A50C /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		DA60E1962978226900D7A50C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DA60E198297822A800D7A50C /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		DA60E19A297829AC00D7A50C /* MathController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathController.swift; sourceTree = "<group>"; };
 		DA60E19C297829CB00D7A50C /* Math.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Math.xib; sourceTree = "<group>"; };
 		DAB324242981559200448CCE /* ChocoTennis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChocoTennis.xcdatamodel; sourceTree = "<group>"; };
@@ -71,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				DAB3242629815ACB00448CCE /* ManagedObjects */,
-				DA60E1952978225D00D7A50C /* Models */,
 				DA60E1942978198000D7A50C /* Views */,
 				DA60E17B297817C100D7A50C /* AppDelegate.swift */,
 				DA60E17D297817C100D7A50C /* SceneDelegate.swift */,
@@ -100,15 +95,6 @@
 				DA60E19C297829CB00D7A50C /* Math.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		DA60E1952978225D00D7A50C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DA60E1962978226900D7A50C /* User.swift */,
-				DA60E198297822A800D7A50C /* Math.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DAB3242629815ACB00448CCE /* ManagedObjects */ = {
@@ -192,7 +178,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA60E1972978226900D7A50C /* User.swift in Sources */,
 				DAB3242A29815B8200448CCE /* MatchMO.swift in Sources */,
 				DA60E19B297829AC00D7A50C /* MathController.swift in Sources */,
 				DAB3242829815B7100448CCE /* UserMO.swift in Sources */,
@@ -200,7 +185,6 @@
 				DA60E193297818E800D7A50C /* MainController.swift in Sources */,
 				DA60E17C297817C100D7A50C /* AppDelegate.swift in Sources */,
 				DA60E17E297817C100D7A50C /* SceneDelegate.swift in Sources */,
-				DA60E199297822A800D7A50C /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

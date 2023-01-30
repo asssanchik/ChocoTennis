@@ -15,6 +15,6 @@ class MatchMO: NSManagedObject {
     @NSManaged var point2: Int16
     @NSManaged var completedAt: Date
     @NSManaged var createdAt: Date
-    // создал Set с типом UserMO
-    @NSManaged var players: Set<UserMO>?
+    @NSManaged var playerUUID1: UUID
+    @NSManaged var playerUUID2: UUID
 }

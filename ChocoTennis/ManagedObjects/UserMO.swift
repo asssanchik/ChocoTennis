@@ -9,5 +9,6 @@ import CoreData
 // обьект для сущности в БД
 @objc(UserMO)
 class UserMO: NSManagedObject {
+    @NSManaged var uuid: UUID
     @NSManaged var name: String?
 }
