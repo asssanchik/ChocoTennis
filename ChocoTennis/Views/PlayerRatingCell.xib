@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerRatingCell" id="xH7-IX-OOi" customClass="PlayerRatingCell" customModule="ChocoTennis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xH7-IX-OOi" id="T42-t0-E08">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя игрока" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgY-En-yoy">
+                        <rect key="frame" x="8" y="12" width="92.666666666666671" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="tXb-13-bRL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Партии" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zM-a3-EGz">
+                        <rect key="frame" x="269" y="12" width="59" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="BRb-Jz-FUp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZX-dX-MSU">
+                        <rect key="frame" x="344" y="12" width="41" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Xs6-II-ZsH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="lgY-En-yoy" secondAttribute="bottom" constant="12" id="9Xk-i0-nou"/>
+                    <constraint firstItem="4zM-a3-EGz" firstAttribute="top" secondItem="T42-t0-E08" secondAttribute="top" constant="12" id="BA2-Ua-5jL"/>
+                    <constraint firstItem="lgY-En-yoy" firstAttribute="leading" secondItem="T42-t0-E08" secondAttribute="leading" constant="8" id="Myy-J0-waV"/>
+                    <constraint firstItem="lgY-En-yoy" firstAttribute="top" secondItem="T42-t0-E08" secondAttribute="top" constant="12" id="Pbn-Tu-lVN"/>
+                    <constraint firstAttribute="trailing" secondItem="cZX-dX-MSU" secondAttribute="trailing" constant="8" id="Pzk-l6-Izk"/>
+                    <constraint firstAttribute="bottom" secondItem="cZX-dX-MSU" secondAttribute="bottom" constant="12" id="Tq7-pI-CXp"/>
+                    <constraint firstItem="cZX-dX-MSU" firstAttribute="top" secondItem="T42-t0-E08" secondAttribute="top" constant="12" id="Z24-Mg-1ge"/>
+                    <constraint firstItem="cZX-dX-MSU" firstAttribute="leading" secondItem="4zM-a3-EGz" secondAttribute="trailing" constant="16" id="ozE-He-MMc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="131" y="-27"/>
+        </tableViewCell>
+    </objects>
+</document>

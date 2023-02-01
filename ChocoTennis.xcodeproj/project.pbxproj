@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA5649CA298A9B8D00F86D08 /* PlayerRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */; };
+		DA5649CC298A9D3100F86D08 /* PlayerRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */; };
+		DA5649CE298AA28800F86D08 /* ScoreMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649CD298AA28800F86D08 /* ScoreMO.swift */; };
+		DA5649D1298AA62D00F86D08 /* SWDataManager in Frameworks */ = {isa = PBXBuildFile; productRef = DA5649D0298AA62D00F86D08 /* SWDataManager */; };
+		DA5649D3298AA68500F86D08 /* SWDataManager+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649D2298AA68500F86D08 /* SWDataManager+Main.swift */; };
 		DA60E17C297817C100D7A50C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E17B297817C100D7A50C /* AppDelegate.swift */; };
 		DA60E17E297817C100D7A50C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E17D297817C100D7A50C /* SceneDelegate.swift */; };
 		DA60E185297817C300D7A50C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA60E184297817C300D7A50C /* Assets.xcassets */; };
@@ -21,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerRatingCell.xib; sourceTree = "<group>"; };
+		DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRatingCell.swift; sourceTree = "<group>"; };
+		DA5649CD298AA28800F86D08 /* ScoreMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMO.swift; sourceTree = "<group>"; };
+		DA5649D2298AA68500F86D08 /* SWDataManager+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SWDataManager+Main.swift"; sourceTree = "<group>"; };
 		DA60E178297817C100D7A50C /* ChocoTennis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChocoTennis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA60E17B297817C100D7A50C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA60E17D297817C100D7A50C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5649D1298AA62D00F86D08 /* SWDataManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +85,7 @@
 				DA60E186297817C300D7A50C /* LaunchScreen.storyboard */,
 				DA60E189297817C300D7A50C /* Info.plist */,
 				DAB324232981559200448CCE /* ChocoTennis.xcdatamodeld */,
+				DA5649D2298AA68500F86D08 /* SWDataManager+Main.swift */,
 			);
 			path = ChocoTennis;
 			sourceTree = "<group>";
@@ -93,6 +104,8 @@
 			children = (
 				DA60E190297818D000D7A50C /* Main.xib */,
 				DA60E19C297829CB00D7A50C /* Math.xib */,
+				DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */,
+				DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,6 +115,7 @@
 			children = (
 				DAB3242729815B7100448CCE /* UserMO.swift */,
 				DAB3242929815B8200448CCE /* MatchMO.swift */,
+				DA5649CD298AA28800F86D08 /* ScoreMO.swift */,
 			);
 			path = ManagedObjects;
 			sourceTree = "<group>";
@@ -122,6 +136,9 @@
 			dependencies = (
 			);
 			name = ChocoTennis;
+			packageProductDependencies = (
+				DA5649D0298AA62D00F86D08 /* SWDataManager */,
+			);
 			productName = ChocoTennis;
 			productReference = DA60E178297817C100D7A50C /* ChocoTennis.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +167,9 @@
 				Base,
 			);
 			mainGroup = DA60E16F297817C100D7A50C;
+			packageReferences = (
+				DA5649CF298AA62D00F86D08 /* XCRemoteSwiftPackageReference "SWDataManager" */,
+			);
 			productRefGroup = DA60E179297817C100D7A50C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -168,6 +188,7 @@
 				DA60E191297818D000D7A50C /* Main.xib in Resources */,
 				DA60E185297817C300D7A50C /* Assets.xcassets in Resources */,
 				DA60E19D297829CB00D7A50C /* Math.xib in Resources */,
+				DA5649CA298A9B8D00F86D08 /* PlayerRatingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +202,10 @@
 				DAB3242A29815B8200448CCE /* MatchMO.swift in Sources */,
 				DA60E19B297829AC00D7A50C /* MathController.swift in Sources */,
 				DAB3242829815B7100448CCE /* UserMO.swift in Sources */,
+				DA5649CC298A9D3100F86D08 /* PlayerRatingCell.swift in Sources */,
+				DA5649D3298AA68500F86D08 /* SWDataManager+Main.swift in Sources */,
 				DAB324252981559200448CCE /* ChocoTennis.xcdatamodeld in Sources */,
+				DA5649CE298AA28800F86D08 /* ScoreMO.swift in Sources */,
 				DA60E193297818E800D7A50C /* MainController.swift in Sources */,
 				DA60E17C297817C100D7A50C /* AppDelegate.swift in Sources */,
 				DA60E17E297817C100D7A50C /* SceneDelegate.swift in Sources */,
@@ -402,6 +426,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA5649CF298AA62D00F86D08 /* XCRemoteSwiftPackageReference "SWDataManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/0x3337/SWDataManager";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA5649D0298AA62D00F86D08 /* SWDataManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA5649CF298AA62D00F86D08 /* XCRemoteSwiftPackageReference "SWDataManager" */;
+			productName = SWDataManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DAB324232981559200448CCE /* ChocoTennis.xcdatamodeld */ = {

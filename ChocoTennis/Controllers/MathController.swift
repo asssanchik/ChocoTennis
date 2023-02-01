@@ -6,6 +6,7 @@
 //
 import UIKit
 import CoreData
+import SWDataManager
 
 
 class MathController: UIViewController {
@@ -16,10 +17,9 @@ class MathController: UIViewController {
     @IBOutlet weak var timer1Label: UILabel!
     @IBOutlet weak var timer2Label: UILabel!
     
-    lazy var container: NSPersistentContainer = {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer
-    }()
+    let dataManager = SWDataManager.main
+    
+    
     
     var player1: UserMO
     var player2: UserMO
@@ -61,16 +61,18 @@ class MathController: UIViewController {
         
         // в случае превышение очков больше чем 11, переносимся на главный экран
         if point1 >= 11 || point2 >= 11 {
-            let context = container.viewContext
-            let matchMo = NSEntityDescription.insertNewObject(forEntityName: "Match", into: context) as! MatchMO
-            matchMo.playerUUID1 = player1.uuid
-            matchMo.playerUUID2 = player2.uuid
-            matchMo.point1 = Int16(point1)
-            matchMo.point2 = Int16(point2)
+            let matchMo = dataManager.insert(for: MatchMO.self)
             matchMo.createdAt = createdAt
             matchMo.completedAt = Date()
-            
-            try! context.save()
+            let score1 = dataManager.insert(for: ScoreMO.self)
+            score1.player = player1
+            score1.point = Int16(point1)
+            score1.match = matchMo
+            let score2 = dataManager.insert(for: ScoreMO.self)
+            score2.player = player2
+            score2.point = Int16(point2)
+            score2.match = matchMo
+            dataManager.save()
             dismiss(animated: true)
         }
         

@@ -6,33 +6,33 @@
 //
 import UIKit
 import CoreData
+import SWDataManager
 
 class MainController: UIViewController {
-    static let isFirstLaunch = "isFirstLaunch"
-    lazy var container: NSPersistentContainer = {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer
-    }()
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    static let isFirstLaunch = "isFirstLaunch"
+    let dataManager = SWDataManager.main
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        let nib = UINib(nibName: "PlayerRatingCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "PlayerRatingCell")
+        tableView.dataSource = self
         print("Main Controller Loaded")
-        let request = NSFetchRequest<UserMO>(entityName: "User")
-        let users = try! container.viewContext.fetch(request)
-        for user in users {
-            print(user.name)
+         
+        let userScores = dataManager.aggregate(for: ScoreMO.self, attributes: [
+            "player.name",
+            .sum("point", resultType: .decimalAttributeType)
+            
+        ], groupBy: ["player.name"]) as! [[String: Any]]
+        for userScore in userScores {
+            print(userScore)
         }
         
-        let requestForMatch = NSFetchRequest<MatchMO>(entityName: "Match")
-        let matches = try! container.viewContext.fetch(requestForMatch)
-        for match in matches {
-            let player1 = getUser(byUUID: match.playerUUID1)
-            let player2 = getUser(byUUID: match.playerUUID2)
-            print(player1.name, match.point1)
-            print(player2.name, match.point2)
-        }
+        
     }
     
     @IBAction func goDidClick(_ sender: UIButton) {
@@ -53,6 +53,7 @@ class MainController: UIViewController {
             mathScene.modalPresentationStyle = .fullScreen
             present(mathScene, animated: true)
         })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         // вызов другого контроллера
         present(alert, animated: true)
@@ -72,34 +73,39 @@ extension MainController {
     
     func sowUser() {
         let userNames = ["Assan", "Mirsaid"]
-        let context = container.viewContext
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         for userName in userNames {
-            let userMo = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! UserMO
+            let userMo = dataManager.insert(for: UserMO.self)
             userMo.uuid = UUID()
             userMo.name = userName
             
         }
-        try! context.save()
+         dataManager.save()
     }
-    func getUser(byUUID uuid: UUID) -> UserMO {
-        let request = NSFetchRequest<UserMO>(entityName: "User")
-        request.predicate = NSPredicate(format: "uuid = %@", uuid as CVarArg)
-       return try! container.viewContext.fetch(request).first!
-    }
+   
     //
     func getOrCreateUser(byName name: String) -> UserMO {
-        let request = NSFetchRequest<UserMO>(entityName: "User")
-        request.predicate = NSPredicate(format: "name = %@", name)
-        var  user = try! container.viewContext.fetch(request).first
+        var  user = dataManager.fetch(for: UserMO.self, format: "name = %@", name).first
         if let user = user {
             return user
         }
-        let context = container.viewContext
-        user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as? UserMO
+        user = dataManager.insert(for: UserMO.self)
         user?.uuid = UUID()
         user?.name = name
-        try! context.save()
+        dataManager.save()
         return user!
     }
+    
+}
+
+extension MainController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerRatingCell", for: indexPath)
+        return cell
+    }
+    
+    
 }
