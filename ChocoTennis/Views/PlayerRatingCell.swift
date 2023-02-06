@@ -9,5 +9,12 @@ import UIKit
 
 
 class PlayerRatingCell: UITableViewCell {
-
+ 
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var matchCountLabel: UILabel!
+    
+    @IBOutlet weak var pointLabel: UILabel!
+    
+    
 }

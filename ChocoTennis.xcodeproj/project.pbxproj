@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA12ACE7299133E40036CBB4 /* PlayerRatingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA12ACE6299133E40036CBB4 /* PlayerRatingHeaderView.xib */; };
 		DA5649CA298A9B8D00F86D08 /* PlayerRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */; };
 		DA5649CC298A9D3100F86D08 /* PlayerRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */; };
 		DA5649CE298AA28800F86D08 /* ScoreMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649CD298AA28800F86D08 /* ScoreMO.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA12ACE6299133E40036CBB4 /* PlayerRatingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerRatingHeaderView.xib; sourceTree = "<group>"; };
 		DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerRatingCell.xib; sourceTree = "<group>"; };
 		DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRatingCell.swift; sourceTree = "<group>"; };
 		DA5649CD298AA28800F86D08 /* ScoreMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMO.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				DA60E190297818D000D7A50C /* Main.xib */,
 				DA60E19C297829CB00D7A50C /* Math.xib */,
 				DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */,
+				DA12ACE6299133E40036CBB4 /* PlayerRatingHeaderView.xib */,
 				DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */,
 			);
 			path = Views;
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA60E188297817C300D7A50C /* LaunchScreen.storyboard in Resources */,
+				DA12ACE7299133E40036CBB4 /* PlayerRatingHeaderView.xib in Resources */,
 				DA60E191297818D000D7A50C /* Main.xib in Resources */,
 				DA60E185297817C300D7A50C /* Assets.xcassets in Resources */,
 				DA60E19D297829CB00D7A50C /* Math.xib in Resources */,

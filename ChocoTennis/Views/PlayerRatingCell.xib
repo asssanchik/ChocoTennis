@@ -17,28 +17,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя игрока" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgY-En-yoy">
-                        <rect key="frame" x="8" y="12" width="92.666666666666671" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="tXb-13-bRL"/>
-                        </constraints>
+                        <rect key="frame" x="8" y="12" width="92.666666666666671" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Партии" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zM-a3-EGz">
-                        <rect key="frame" x="269" y="12" width="59" height="24"/>
+                        <rect key="frame" x="269" y="11.999999999999998" width="59" height="20.333333333333329"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="24" id="BRb-Jz-FUp"/>
+                            <constraint firstAttribute="width" constant="59" id="KsS-es-YlX"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZX-dX-MSU">
-                        <rect key="frame" x="344" y="12" width="41" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="Xs6-II-ZsH"/>
-                        </constraints>
+                        <rect key="frame" x="344" y="12" width="41" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -55,6 +49,11 @@
                     <constraint firstItem="cZX-dX-MSU" firstAttribute="leading" secondItem="4zM-a3-EGz" secondAttribute="trailing" constant="16" id="ozE-He-MMc"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="matchCountLabel" destination="4zM-a3-EGz" id="Tca-dQ-8bs"/>
+                <outlet property="nameLabel" destination="lgY-En-yoy" id="tjM-Tv-DR5"/>
+                <outlet property="pointLabel" destination="cZX-dX-MSU" id="0Vc-6K-VBU"/>
+            </connections>
             <point key="canvasLocation" x="131" y="-27"/>
         </tableViewCell>
     </objects>
