@@ -11,15 +11,15 @@ import SWDataManager
 
 class MathController: UIViewController {
     
-    @IBOutlet weak var counterForPlayer1: UILabel!
-    @IBOutlet weak var counterForPlayer2: UILabel!
+    @IBOutlet weak var player1View: PlayerScore!
+    @IBOutlet weak var player2View: PlayerScore!
     
     @IBOutlet weak var timer1Label: UILabel!
     @IBOutlet weak var timer2Label: UILabel!
     
     let dataManager = SWDataManager.main
     
-    
+    var delegate: MatchDelegate?
     
     var player1: UserMO
     var player2: UserMO
@@ -40,11 +40,16 @@ class MathController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        counterForPlayer1.transform = CGAffineTransform(rotationAngle: .pi)
+        print("Match controller")
+        player1View.transform = CGAffineTransform(rotationAngle: .pi)
         timer1Label.transform = CGAffineTransform(rotationAngle: .pi / 2)
         timer2Label.transform = CGAffineTransform(rotationAngle: .pi / -2)
         
+        
         Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(processTimer), userInfo: nil, repeats: true)
+        
+        player1View.nameLabel.text = player1.name
+        player2View.nameLabel.text = player2.name
     }
     
     @IBAction func counterDidClick(_ sender: UIControl) {
@@ -73,13 +78,11 @@ class MathController: UIViewController {
             score2.point = Int16(point2)
             score2.match = matchMo
             dataManager.save()
+            delegate?.finished()
             dismiss(animated: true)
         }
-        
-
-        counterForPlayer1.text = String(point1)
-        counterForPlayer2.text = String(point2)
-        
+        player1View.scoreLabel.text = String(point1)
+        player2View.scoreLabel.text = String(point2)
     }
     
     @objc func processTimer() {
@@ -87,7 +90,7 @@ class MathController: UIViewController {
         let currentDate = Date()
         // это разница во времени, между текущем и тем что у нас сохранилось
         let diff = currentDate.timeIntervalSince1970 - createdAt.timeIntervalSince1970
-        let d = floor(diff * 100) / 100
+        let d = Int(diff)
         timer1Label.text = String(d)
         timer2Label.text = String(d)
         

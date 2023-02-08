@@ -15,6 +15,4 @@ class PlayerRatingCell: UITableViewCell {
     @IBOutlet weak var matchCountLabel: UILabel!
     
     @IBOutlet weak var pointLabel: UILabel!
-    
-    
 }

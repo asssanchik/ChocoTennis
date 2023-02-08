@@ -24,6 +24,9 @@
 		DAB324252981559200448CCE /* ChocoTennis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAB324232981559200448CCE /* ChocoTennis.xcdatamodeld */; };
 		DAB3242829815B7100448CCE /* UserMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3242729815B7100448CCE /* UserMO.swift */; };
 		DAB3242A29815B8200448CCE /* MatchMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3242929815B8200448CCE /* MatchMO.swift */; };
+		DAD802A32993CB7D008AA1E5 /* MatchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD802A22993CB7D008AA1E5 /* MatchDelegate.swift */; };
+		DAD802A52993D427008AA1E5 /* PlayerScore.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAD802A42993D427008AA1E5 /* PlayerScore.xib */; };
+		DAD802A72993D84D008AA1E5 /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD802A62993D84D008AA1E5 /* PlayerScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		DAB324242981559200448CCE /* ChocoTennis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChocoTennis.xcdatamodel; sourceTree = "<group>"; };
 		DAB3242729815B7100448CCE /* UserMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMO.swift; sourceTree = "<group>"; };
 		DAB3242929815B8200448CCE /* MatchMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMO.swift; sourceTree = "<group>"; };
+		DAD802A22993CB7D008AA1E5 /* MatchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDelegate.swift; sourceTree = "<group>"; };
+		DAD802A42993D427008AA1E5 /* PlayerScore.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerScore.xib; sourceTree = "<group>"; };
+		DAD802A62993D84D008AA1E5 /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		DA60E17A297817C100D7A50C /* ChocoTennis */ = {
 			isa = PBXGroup;
 			children = (
+				DAD802A12993CB5A008AA1E5 /* Delegates */,
 				DAB3242629815ACB00448CCE /* ManagedObjects */,
 				DA60E1942978198000D7A50C /* Views */,
 				DA60E17B297817C100D7A50C /* AppDelegate.swift */,
@@ -106,9 +113,11 @@
 			children = (
 				DA60E190297818D000D7A50C /* Main.xib */,
 				DA60E19C297829CB00D7A50C /* Math.xib */,
-				DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */,
 				DA12ACE6299133E40036CBB4 /* PlayerRatingHeaderView.xib */,
+				DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */,
 				DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */,
+				DAD802A42993D427008AA1E5 /* PlayerScore.xib */,
+				DAD802A62993D84D008AA1E5 /* PlayerScore.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +130,14 @@
 				DA5649CD298AA28800F86D08 /* ScoreMO.swift */,
 			);
 			path = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		DAD802A12993CB5A008AA1E5 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				DAD802A22993CB7D008AA1E5 /* MatchDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +206,7 @@
 			files = (
 				DA60E188297817C300D7A50C /* LaunchScreen.storyboard in Resources */,
 				DA12ACE7299133E40036CBB4 /* PlayerRatingHeaderView.xib in Resources */,
+				DAD802A52993D427008AA1E5 /* PlayerScore.xib in Resources */,
 				DA60E191297818D000D7A50C /* Main.xib in Resources */,
 				DA60E185297817C300D7A50C /* Assets.xcassets in Resources */,
 				DA60E19D297829CB00D7A50C /* Math.xib in Resources */,
@@ -204,11 +222,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB3242A29815B8200448CCE /* MatchMO.swift in Sources */,
+				DAD802A72993D84D008AA1E5 /* PlayerScore.swift in Sources */,
 				DA60E19B297829AC00D7A50C /* MathController.swift in Sources */,
 				DAB3242829815B7100448CCE /* UserMO.swift in Sources */,
 				DA5649CC298A9D3100F86D08 /* PlayerRatingCell.swift in Sources */,
 				DA5649D3298AA68500F86D08 /* SWDataManager+Main.swift in Sources */,
 				DAB324252981559200448CCE /* ChocoTennis.xcdatamodeld in Sources */,
+				DAD802A32993CB7D008AA1E5 /* MatchDelegate.swift in Sources */,
 				DA5649CE298AA28800F86D08 /* ScoreMO.swift in Sources */,
 				DA60E193297818E800D7A50C /* MainController.swift in Sources */,
 				DA60E17C297817C100D7A50C /* AppDelegate.swift in Sources */,

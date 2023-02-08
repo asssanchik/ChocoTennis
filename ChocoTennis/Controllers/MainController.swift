@@ -35,48 +35,7 @@ class MainController: UIViewController {
         tableView.tableHeaderView = nib2.instantiate(withOwner: nil)[0] as! UIView
         tableView.dataSource = self
         print("Main Controller Loaded")
-         
-        var userScores = dataManager.aggregate(
-            for: ScoreMO.self,
-            attributes: [
-                "player.uuid",
-                "player.name",
-                .sum("point", resultType: .decimalAttributeType)
-            ],
-            groupBy: [
-                "player.uuid",
-                "player.name"
-            ]
-        ) as! [[String: Any]]
-    
-        userScores.sort {
-            return $0["sum"] as! Int > $1["sum"] as! Int
-        }
-        
-        for userScore in userScores {
-            let predicate = NSPredicate(format: "player.uuid == %@ AND point == %d", userScore["player.uuid"] as! CVarArg, 11)
-            let result = dataManager.aggregate(
-                for: ScoreMO.self,
-                attributes: [
-                    .count("point", nameAs: "winMatchCount", resultType: .decimalAttributeType)
-                ],
-                predicate: predicate,
-                groupBy: [
-                    "player.uuid"
-                ]
-            ) as! [[String: Any]]
-            
-            let winMatchCount = result.first?["winMatchCount"] ?? 0
-            self.userScores.append(UserScore(
-                name: userScore["player.name"] as! String,
-                uuid: userScore["player.uuid"] as! UUID,
-                score: userScore["sum"] as! Int16,
-                winMatchCount: winMatchCount as! Int
-            ))
-            
-        }
-        
-        
+         updateTableView()
     }
     
     @IBAction func goDidClick(_ sender: UIButton) {
@@ -95,6 +54,7 @@ class MainController: UIViewController {
             let player2 = getOrCreateUser(byName: playerName2)
             let mathScene = MathController(player1: player1, player2: player2)
             mathScene.modalPresentationStyle = .fullScreen
+            mathScene.delegate = self
             present(mathScene, animated: true)
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -139,6 +99,56 @@ extension MainController {
         return user!
     }
     
+    func updateTableView() {
+        var userScores = dataManager.aggregate(
+            for: ScoreMO.self,
+            attributes: [
+                "player.uuid",
+                "player.name",
+                .sum("point", resultType: .decimalAttributeType)
+            ],
+            groupBy: [
+                "player.uuid",
+                "player.name"
+            ]
+        ) as! [[String: Any]]
+        
+        for userScore in userScores {
+            let predicate = NSPredicate(format: "player.uuid == %@ AND point == %d", userScore["player.uuid"] as! CVarArg, 11)
+            let result = dataManager.aggregate(
+                for: ScoreMO.self,
+                attributes: [
+                    .count("point", nameAs: "winMatchCount", resultType: .decimalAttributeType)
+                ],
+                predicate: predicate,
+                groupBy: [
+                    "player.uuid"
+                ]
+            ) as! [[String: Any]]
+            
+            let winMatchCount = result.first?["winMatchCount"] ?? 0
+            self.userScores.append(UserScore(
+                name: userScore["player.name"] as! String,
+                uuid: userScore["player.uuid"] as! UUID,
+                score: userScore["sum"] as! Int16,
+                winMatchCount: winMatchCount as! Int
+            ))
+            
+        }
+        
+        self.userScores.sort {
+            return $0.winMatchCount > $1.winMatchCount || $0.score > $1.score
+        
+        }
+    }
+}
+
+extension MainController: MatchDelegate {
+    func finished() {
+        userScores.removeAll()
+        updateTableView()
+        tableView.reloadData()
+    }
 }
 
 extension MainController: UITableViewDataSource {

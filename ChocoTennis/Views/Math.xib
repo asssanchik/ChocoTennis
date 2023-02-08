@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MathController" customModule="ChocoTennis" customModuleProvider="target">
             <connections>
-                <outlet property="counterForPlayer1" destination="fSj-EG-8wd" id="Qco-Sl-j3D"/>
-                <outlet property="counterForPlayer2" destination="KmD-7F-7p1" id="IZZ-jC-mTm"/>
+                <outlet property="player1View" destination="oks-Ah-KCm" id="b1K-4u-LwW"/>
+                <outlet property="player2View" destination="KQA-MW-Ln0" id="0TR-oT-ceH"/>
                 <outlet property="timer1Label" destination="1rg-qi-7V8" id="szB-kn-2Et"/>
                 <outlet property="timer2Label" destination="r9r-8q-gMc" id="U4q-PR-Pm3"/>
                 <outlet property="view" destination="msN-7A-wcN" id="PYg-pT-ZaM"/>
@@ -23,22 +23,9 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ppz-dQ-Vue">
-                    <rect key="frame" x="132.66666666666666" y="155" width="127.99999999999997" height="128"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="128" id="fFG-9Y-zmo"/>
-                        <constraint firstAttribute="height" constant="128" id="kt2-gy-cgw"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otg-ID-WbO">
                     <rect key="frame" x="175.33333333333334" y="407" width="42.333333333333343" height="38.333333333333314"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSj-EG-8wd">
-                    <rect key="frame" x="187" y="102" width="19.333333333333343" height="37"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -78,19 +65,14 @@
                         <constraint firstItem="r9r-8q-gMc" firstAttribute="centerY" secondItem="DGe-dF-C5O" secondAttribute="centerY" id="s0i-tf-J3Z"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmD-7F-7p1">
-                    <rect key="frame" x="186" y="764" width="20" height="38.333333333333371"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0a3-j7-96z">
-                    <rect key="frame" x="132.66666666666666" y="626" width="127.99999999999997" height="128"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="128" id="iR5-kc-MzG"/>
-                        <constraint firstAttribute="width" constant="128" id="tkt-p8-P9m"/>
-                    </constraints>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oks-Ah-KCm" customClass="PlayerScore" customModule="ChocoTennis" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="67" width="393" height="339"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQA-MW-Ln0" customClass="PlayerScore" customModule="ChocoTennis" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="446" width="393" height="364"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                </view>
                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdL-Y6-fTI" customClass="UIControl">
                     <rect key="frame" x="0.0" y="426" width="393" height="426"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,20 +97,18 @@
             <viewLayoutGuide key="safeArea" id="Y27-nb-v8V"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="BZy-fH-T1L" firstAttribute="top" secondItem="oks-Ah-KCm" secondAttribute="bottom" id="49q-NL-3xR"/>
+                <constraint firstItem="Y27-nb-v8V" firstAttribute="bottom" secondItem="KQA-MW-Ln0" secondAttribute="bottom" constant="8" id="4A3-RM-a8G"/>
                 <constraint firstItem="IdL-Y6-fTI" firstAttribute="height" secondItem="H1A-jK-xE0" secondAttribute="height" id="8Iq-Fq-TXA"/>
-                <constraint firstItem="fSj-EG-8wd" firstAttribute="centerX" secondItem="msN-7A-wcN" secondAttribute="centerX" id="8QZ-3f-MbK"/>
-                <constraint firstItem="KmD-7F-7p1" firstAttribute="centerX" secondItem="msN-7A-wcN" secondAttribute="centerX" id="A34-vm-au6"/>
+                <constraint firstItem="KQA-MW-Ln0" firstAttribute="top" secondItem="BZy-fH-T1L" secondAttribute="bottom" id="AYl-wf-Yem"/>
+                <constraint firstItem="KQA-MW-Ln0" firstAttribute="trailing" secondItem="Y27-nb-v8V" secondAttribute="trailing" id="BYb-oF-RgS"/>
                 <constraint firstItem="Otg-ID-WbO" firstAttribute="centerX" secondItem="msN-7A-wcN" secondAttribute="centerX" id="C6W-kb-6ar"/>
-                <constraint firstItem="Ppz-dQ-Vue" firstAttribute="centerX" secondItem="msN-7A-wcN" secondAttribute="centerX" id="CfK-uw-hnG"/>
-                <constraint firstItem="Ppz-dQ-Vue" firstAttribute="top" secondItem="Y27-nb-v8V" secondAttribute="top" constant="96" id="HGh-jB-Zf0"/>
+                <constraint firstItem="KQA-MW-Ln0" firstAttribute="leading" secondItem="Y27-nb-v8V" secondAttribute="leading" id="EkU-0M-bsH"/>
+                <constraint firstItem="oks-Ah-KCm" firstAttribute="top" secondItem="Y27-nb-v8V" secondAttribute="top" constant="8" id="Flj-YH-Obk"/>
                 <constraint firstItem="Y27-nb-v8V" firstAttribute="trailing" secondItem="DGe-dF-C5O" secondAttribute="trailing" constant="8" id="Ksx-19-e8i"/>
-                <constraint firstItem="0a3-j7-96z" firstAttribute="centerX" secondItem="msN-7A-wcN" secondAttribute="centerX" id="M9v-74-HFT"/>
-                <constraint firstItem="KmD-7F-7p1" firstAttribute="top" secondItem="0a3-j7-96z" secondAttribute="bottom" constant="16" id="QKp-Lv-47k"/>
                 <constraint firstAttribute="bottom" secondItem="IdL-Y6-fTI" secondAttribute="bottom" id="QUs-S3-cJd"/>
                 <constraint firstItem="BZy-fH-T1L" firstAttribute="centerY" secondItem="msN-7A-wcN" secondAttribute="centerY" id="SBP-AE-8P7"/>
-                <constraint firstItem="Y27-nb-v8V" firstAttribute="bottom" secondItem="0a3-j7-96z" secondAttribute="bottom" constant="64" id="SGz-uc-AMm"/>
                 <constraint firstItem="DGe-dF-C5O" firstAttribute="centerY" secondItem="msN-7A-wcN" secondAttribute="centerY" id="TkU-Q9-zuf"/>
-                <constraint firstItem="Ppz-dQ-Vue" firstAttribute="top" secondItem="fSj-EG-8wd" secondAttribute="bottom" constant="16" id="YIK-Vj-xcG"/>
                 <constraint firstItem="IdL-Y6-fTI" firstAttribute="top" secondItem="H1A-jK-xE0" secondAttribute="bottom" id="d0A-80-IxK"/>
                 <constraint firstItem="Otg-ID-WbO" firstAttribute="centerY" secondItem="msN-7A-wcN" secondAttribute="centerY" id="gVZ-1h-avY"/>
                 <constraint firstItem="Y27-nb-v8V" firstAttribute="trailing" secondItem="IdL-Y6-fTI" secondAttribute="trailing" id="gwu-48-FcE"/>
@@ -137,6 +117,8 @@
                 <constraint firstItem="H1A-jK-xE0" firstAttribute="leading" secondItem="Y27-nb-v8V" secondAttribute="leading" id="mYs-36-jz2"/>
                 <constraint firstItem="Y27-nb-v8V" firstAttribute="trailing" secondItem="H1A-jK-xE0" secondAttribute="trailing" id="nd3-ou-KaJ"/>
                 <constraint firstItem="BZy-fH-T1L" firstAttribute="leading" secondItem="Y27-nb-v8V" secondAttribute="leading" constant="8" id="qVP-RY-qFM"/>
+                <constraint firstItem="Y27-nb-v8V" firstAttribute="trailing" secondItem="oks-Ah-KCm" secondAttribute="trailing" id="s1a-WP-zYD"/>
+                <constraint firstItem="oks-Ah-KCm" firstAttribute="leading" secondItem="Y27-nb-v8V" secondAttribute="leading" id="wd8-2B-dfZ"/>
             </constraints>
             <point key="canvasLocation" x="478.62595419847327" y="12.67605633802817"/>
         </view>
@@ -144,6 +126,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
