@@ -1,5 +1,5 @@
 //
-//  MainController.swift
+//  LeagueTableControllers.swift
 //  ChocoTennis
 //
 //  Created by Assan on 18.01.2023.
@@ -16,7 +16,7 @@ struct UserScore {
     
 }
 
-class MainController: UIViewController {
+class LeagueTableControllers: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,39 +39,44 @@ class MainController: UIViewController {
     }
     
     @IBAction func goDidClick(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Напишите имена игроков!", message: nil, preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.placeholder = "Игрок 1"
-            
-        }
-        alert.addTextField { textField in
-            textField.placeholder = "Игрок 2"
-        }
-        alert.addAction(UIAlertAction(title: "OK", style: .default) { [unowned self] _ in
-            let playerName1 = alert.textFields![0].text ?? ""
-            let playerName2 = alert.textFields![1].text ?? ""
-            let player1 = getOrCreateUser(byName: playerName1)
-            let player2 = getOrCreateUser(byName: playerName2)
-            let mathScene = MathController(player1: player1, player2: player2)
-            mathScene.modalPresentationStyle = .fullScreen
-            mathScene.delegate = self
-            present(mathScene, animated: true)
-        })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+//        let alert = UIAlertController(title: "Напишите имена игроков!", message: nil, preferredStyle: .alert)
+//        alert.addTextField { textField in
+//            textField.placeholder = "Игрок 1"
+//            
+//        }
+//        alert.addTextField { textField in
+//            textField.placeholder = "Игрок 2"
+//        }
+//        alert.addAction(UIAlertAction(title: "OK", style: .default) { [unowned self] _ in
+//            let playerName1 = alert.textFields![0].text ?? ""
+//            let playerName2 = alert.textFields![1].text ?? ""
+//            let player1 = getOrCreateUser(byName: playerName1)
+//            let player2 = getOrCreateUser(byName: playerName2)
+//            let mathScene = MathController(player1: player1, player2: player2)
+//            mathScene.modalPresentationStyle = .fullScreen
+//            mathScene.delegate = self
+//            present(mathScene, animated: true)
+//        })
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         // вызов другого контроллера
-        present(alert, animated: true)
+        let thankYouPageScene = ThankYouPageController()
+        thankYouPageScene.modalPresentationStyle = .fullScreen
+        present(thankYouPageScene, animated: true)
+        
+        
+//        present(alert, animated: true)
         
     }
     
 }
 
-extension MainController {
+extension LeagueTableControllers {
     
     func loadData() {
-        if !UserDefaults.standard.bool(forKey: MainController.isFirstLaunch) {
+        if !UserDefaults.standard.bool(forKey: LeagueTableControllers.isFirstLaunch) {
             sowUser()
-            UserDefaults.standard.set(true, forKey: MainController.isFirstLaunch)
+            UserDefaults.standard.set(true, forKey: LeagueTableControllers.isFirstLaunch)
         }
     }
     
@@ -86,18 +91,6 @@ extension MainController {
          dataManager.save()
     }
    
-    //
-    func getOrCreateUser(byName name: String) -> UserMO {
-        var  user = dataManager.fetch(for: UserMO.self, format: "name = %@", name).first
-        if let user = user {
-            return user
-        }
-        user = dataManager.insert(for: UserMO.self)
-        user?.uuid = UUID()
-        user?.name = name
-        dataManager.save()
-        return user!
-    }
     
     func updateTableView() {
         var userScores = dataManager.aggregate(
@@ -143,7 +136,7 @@ extension MainController {
     }
 }
 
-extension MainController: MatchDelegate {
+extension LeagueTableControllers: MatchDelegate {
     func finished() {
         userScores.removeAll()
         updateTableView()
@@ -151,7 +144,7 @@ extension MainController: MatchDelegate {
     }
 }
 
-extension MainController: UITableViewDataSource {
+extension LeagueTableControllers: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userScores.count
     }

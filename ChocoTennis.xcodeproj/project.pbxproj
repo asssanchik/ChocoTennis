@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0987A0299A61740048DE8C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA09879F299A61740048DE8C /* LaunchScreen.xib */; };
+		DA0987A2299A659C0048DE8C /* ThankYouPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0987A1299A659C0048DE8C /* ThankYouPage.xib */; };
+		DA0987A4299A6A9C0048DE8C /* ThankYouPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0987A3299A6A9C0048DE8C /* ThankYouPageController.swift */; };
+		DA0987A7299A71480048DE8C /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0987A6299A71480048DE8C /* UserRepository.swift */; };
+		DA0987A9299A74300048DE8C /* MainContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0987A8299A74300048DE8C /* MainContoller.swift */; };
+		DA0987AB299A74810048DE8C /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0987AA299A74810048DE8C /* Main.xib */; };
 		DA12ACE7299133E40036CBB4 /* PlayerRatingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA12ACE6299133E40036CBB4 /* PlayerRatingHeaderView.xib */; };
 		DA5649CA298A9B8D00F86D08 /* PlayerRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */; };
 		DA5649CC298A9D3100F86D08 /* PlayerRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */; };
@@ -17,8 +23,8 @@
 		DA60E17E297817C100D7A50C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E17D297817C100D7A50C /* SceneDelegate.swift */; };
 		DA60E185297817C300D7A50C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA60E184297817C300D7A50C /* Assets.xcassets */; };
 		DA60E188297817C300D7A50C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA60E186297817C300D7A50C /* LaunchScreen.storyboard */; };
-		DA60E191297818D000D7A50C /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60E190297818D000D7A50C /* Main.xib */; };
-		DA60E193297818E800D7A50C /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E192297818E800D7A50C /* MainController.swift */; };
+		DA60E191297818D000D7A50C /* LeagueTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60E190297818D000D7A50C /* LeagueTable.xib */; };
+		DA60E193297818E800D7A50C /* LeagueTableControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E192297818E800D7A50C /* LeagueTableControllers.swift */; };
 		DA60E19B297829AC00D7A50C /* MathController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E19A297829AC00D7A50C /* MathController.swift */; };
 		DA60E19D297829CB00D7A50C /* Math.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60E19C297829CB00D7A50C /* Math.xib */; };
 		DAB324252981559200448CCE /* ChocoTennis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAB324232981559200448CCE /* ChocoTennis.xcdatamodeld */; };
@@ -30,6 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA09879F299A61740048DE8C /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		DA0987A1299A659C0048DE8C /* ThankYouPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThankYouPage.xib; sourceTree = "<group>"; };
+		DA0987A3299A6A9C0048DE8C /* ThankYouPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouPageController.swift; sourceTree = "<group>"; };
+		DA0987A6299A71480048DE8C /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		DA0987A8299A74300048DE8C /* MainContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContoller.swift; sourceTree = "<group>"; };
+		DA0987AA299A74810048DE8C /* Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
 		DA12ACE6299133E40036CBB4 /* PlayerRatingHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerRatingHeaderView.xib; sourceTree = "<group>"; };
 		DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerRatingCell.xib; sourceTree = "<group>"; };
 		DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRatingCell.swift; sourceTree = "<group>"; };
@@ -41,8 +53,8 @@
 		DA60E184297817C300D7A50C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA60E187297817C300D7A50C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA60E189297817C300D7A50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA60E190297818D000D7A50C /* Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
-		DA60E192297818E800D7A50C /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		DA60E190297818D000D7A50C /* LeagueTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTable.xib; sourceTree = "<group>"; };
+		DA60E192297818E800D7A50C /* LeagueTableControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableControllers.swift; sourceTree = "<group>"; };
 		DA60E19A297829AC00D7A50C /* MathController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathController.swift; sourceTree = "<group>"; };
 		DA60E19C297829CB00D7A50C /* Math.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Math.xib; sourceTree = "<group>"; };
 		DAB324242981559200448CCE /* ChocoTennis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChocoTennis.xcdatamodel; sourceTree = "<group>"; };
@@ -65,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0987A5299A711A0048DE8C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DA0987A6299A71480048DE8C /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		DA60E16F297817C100D7A50C = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +104,7 @@
 		DA60E17A297817C100D7A50C /* ChocoTennis */ = {
 			isa = PBXGroup;
 			children = (
+				DA0987A5299A711A0048DE8C /* Repositories */,
 				DAD802A12993CB5A008AA1E5 /* Delegates */,
 				DAB3242629815ACB00448CCE /* ManagedObjects */,
 				DA60E1942978198000D7A50C /* Views */,
@@ -102,8 +123,10 @@
 		DA60E18F2978189500D7A50C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DA60E192297818E800D7A50C /* MainController.swift */,
+				DA60E192297818E800D7A50C /* LeagueTableControllers.swift */,
 				DA60E19A297829AC00D7A50C /* MathController.swift */,
+				DA0987A3299A6A9C0048DE8C /* ThankYouPageController.swift */,
+				DA0987A8299A74300048DE8C /* MainContoller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -111,13 +134,16 @@
 		DA60E1942978198000D7A50C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA60E190297818D000D7A50C /* Main.xib */,
+				DA60E190297818D000D7A50C /* LeagueTable.xib */,
 				DA60E19C297829CB00D7A50C /* Math.xib */,
 				DA12ACE6299133E40036CBB4 /* PlayerRatingHeaderView.xib */,
 				DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */,
 				DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */,
 				DAD802A42993D427008AA1E5 /* PlayerScore.xib */,
 				DAD802A62993D84D008AA1E5 /* PlayerScore.swift */,
+				DA09879F299A61740048DE8C /* LaunchScreen.xib */,
+				DA0987A1299A659C0048DE8C /* ThankYouPage.xib */,
+				DA0987AA299A74810048DE8C /* Main.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,7 +233,10 @@
 				DA60E188297817C300D7A50C /* LaunchScreen.storyboard in Resources */,
 				DA12ACE7299133E40036CBB4 /* PlayerRatingHeaderView.xib in Resources */,
 				DAD802A52993D427008AA1E5 /* PlayerScore.xib in Resources */,
-				DA60E191297818D000D7A50C /* Main.xib in Resources */,
+				DA0987A2299A659C0048DE8C /* ThankYouPage.xib in Resources */,
+				DA60E191297818D000D7A50C /* LeagueTable.xib in Resources */,
+				DA0987A0299A61740048DE8C /* LaunchScreen.xib in Resources */,
+				DA0987AB299A74810048DE8C /* Main.xib in Resources */,
 				DA60E185297817C300D7A50C /* Assets.xcassets in Resources */,
 				DA60E19D297829CB00D7A50C /* Math.xib in Resources */,
 				DA5649CA298A9B8D00F86D08 /* PlayerRatingCell.xib in Resources */,
@@ -225,12 +254,15 @@
 				DAD802A72993D84D008AA1E5 /* PlayerScore.swift in Sources */,
 				DA60E19B297829AC00D7A50C /* MathController.swift in Sources */,
 				DAB3242829815B7100448CCE /* UserMO.swift in Sources */,
+				DA0987A9299A74300048DE8C /* MainContoller.swift in Sources */,
 				DA5649CC298A9D3100F86D08 /* PlayerRatingCell.swift in Sources */,
+				DA0987A4299A6A9C0048DE8C /* ThankYouPageController.swift in Sources */,
 				DA5649D3298AA68500F86D08 /* SWDataManager+Main.swift in Sources */,
 				DAB324252981559200448CCE /* ChocoTennis.xcdatamodeld in Sources */,
 				DAD802A32993CB7D008AA1E5 /* MatchDelegate.swift in Sources */,
 				DA5649CE298AA28800F86D08 /* ScoreMO.swift in Sources */,
-				DA60E193297818E800D7A50C /* MainController.swift in Sources */,
+				DA0987A7299A71480048DE8C /* UserRepository.swift in Sources */,
+				DA60E193297818E800D7A50C /* LeagueTableControllers.swift in Sources */,
 				DA60E17C297817C100D7A50C /* AppDelegate.swift in Sources */,
 				DA60E17E297817C100D7A50C /* SceneDelegate.swift in Sources */,
 			);
@@ -375,7 +407,7 @@
 				INFOPLIST_FILE = ChocoTennis/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.xib;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -407,7 +439,7 @@
 				INFOPLIST_FILE = ChocoTennis/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.xib;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
