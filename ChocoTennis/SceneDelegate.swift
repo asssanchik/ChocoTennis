@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // создал окно по размерам устройства
         window = UIWindow(windowScene: scene )
         // это основной контролер который создал
-        window?.rootViewController = MainController()
+        window?.rootViewController = UINavigationController(rootViewController: MainController())
         // это сделает его доступным
         window?.makeKeyAndVisible()
     }
