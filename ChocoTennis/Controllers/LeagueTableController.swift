@@ -16,7 +16,7 @@ struct UserScore {
     
 }
 
-class LeagueTableControllers: UIViewController {
+class LeagueTableController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,7 +35,14 @@ class LeagueTableControllers: UIViewController {
         tableView.tableHeaderView = nib2.instantiate(withOwner: nil)[0] as! UIView
         tableView.dataSource = self
         print("Main Controller Loaded")
-         updateTableView()
+        setupNavigationBar()
+        updateTableView()
+    }
+    
+    func setupNavigationBar() {
+        guard let navigationController = navigationController else { return }
+        navigationItem.title = "Турнирная таблица"
+        
     }
     
     @IBAction func goDidClick(_ sender: UIButton) {
@@ -71,12 +78,12 @@ class LeagueTableControllers: UIViewController {
     
 }
 
-extension LeagueTableControllers {
+extension LeagueTableController {
     
     func loadData() {
-        if !UserDefaults.standard.bool(forKey: LeagueTableControllers.isFirstLaunch) {
+        if !UserDefaults.standard.bool(forKey: LeagueTableController.isFirstLaunch) {
             sowUser()
-            UserDefaults.standard.set(true, forKey: LeagueTableControllers.isFirstLaunch)
+            UserDefaults.standard.set(true, forKey: LeagueTableController.isFirstLaunch)
         }
     }
     
@@ -136,7 +143,7 @@ extension LeagueTableControllers {
     }
 }
 
-extension LeagueTableControllers: MatchDelegate {
+extension LeagueTableController: MatchDelegate {
     func finished() {
         userScores.removeAll()
         updateTableView()
@@ -144,7 +151,7 @@ extension LeagueTableControllers: MatchDelegate {
     }
 }
 
-extension LeagueTableControllers: UITableViewDataSource {
+extension LeagueTableController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userScores.count
     }
