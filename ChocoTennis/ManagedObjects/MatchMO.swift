@@ -13,4 +13,5 @@ class MatchMO: NSManagedObject {
     @NSManaged var uuid: UUID
     @NSManaged var completedAt: Date
     @NSManaged var createdAt: Date
+    @NSManaged var scores: Set<ScoreMO>
 }

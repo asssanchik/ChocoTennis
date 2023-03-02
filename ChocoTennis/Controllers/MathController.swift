@@ -78,8 +78,10 @@ class MathController: UIViewController {
             score2.point = Int16(point2)
             score2.match = matchMo
             dataManager.save()
-            delegate?.finished()
-            dismiss(animated: true)
+            delegate?.controllerWillDisappear()
+            dismiss(animated: true) { [unowned self] in
+                delegate?.controllerDidDisappear(match: matchMo)
+            }
         }
         player1View.scoreLabel.text = String(point1)
         player2View.scoreLabel.text = String(point2)

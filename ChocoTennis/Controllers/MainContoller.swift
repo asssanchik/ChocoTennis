@@ -97,10 +97,9 @@ class MainController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         allTimeLabel.text = getBestPlayerName()
-    }
-    
 
-    
+    }
+ 
 }
 
 
