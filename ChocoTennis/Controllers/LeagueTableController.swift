@@ -46,34 +46,32 @@ class LeagueTableController: UIViewController {
     }
     
     @IBAction func goDidClick(_ sender: UIButton) {
-//        let alert = UIAlertController(title: "Напишите имена игроков!", message: nil, preferredStyle: .alert)
-//        alert.addTextField { textField in
-//            textField.placeholder = "Игрок 1"
-//            
-//        }
-//        alert.addTextField { textField in
-//            textField.placeholder = "Игрок 2"
-//        }
-//        alert.addAction(UIAlertAction(title: "OK", style: .default) { [unowned self] _ in
-//            let playerName1 = alert.textFields![0].text ?? ""
-//            let playerName2 = alert.textFields![1].text ?? ""
-//            let player1 = getOrCreateUser(byName: playerName1)
-//            let player2 = getOrCreateUser(byName: playerName2)
-//            let mathScene = MathController(player1: player1, player2: player2)
-//            mathScene.modalPresentationStyle = .fullScreen
-//            mathScene.delegate = self
-//            present(mathScene, animated: true)
-//        })
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
-        // вызов другого контроллера
-        let thankYouPageScene = ThankYouPageController()
-        thankYouPageScene.modalPresentationStyle = .fullScreen
-        present(thankYouPageScene, animated: true)
-        
-        
-//        present(alert, animated: true)
-        
+        let alert = UIAlertController(title: "Напишите имена игроков!", message: nil, preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = "Игрок 1"
+            
+        }
+        alert.addTextField { textField in
+            textField.placeholder = "Игрок 2"
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { [unowned self] _ in
+            let playerName1 = alert.textFields![0].text ?? ""
+            let playerName2 = alert.textFields![1].text ?? ""
+            if playerName1.count < 4 || playerName2.count < 4 {
+                return
+            }
+            if playerName1 == playerName2 {
+                return
+            }
+            let player1 = UserRepository.getOrCreateUser(byName: playerName1)
+            let player2 = UserRepository.getOrCreateUser(byName: playerName2)
+            let mathScene = MathController(player1: player1, player2: player2)
+            mathScene.modalPresentationStyle = .fullScreen
+            mathScene.delegate = self
+            present(mathScene, animated: true)
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
     }
     
 }
@@ -144,12 +142,22 @@ extension LeagueTableController {
 }
 
 extension LeagueTableController: MatchDelegate {
-    func finished() {
+    func controllerWillDisappear() {
         userScores.removeAll()
         updateTableView()
         tableView.reloadData()
+        print("Game Over")
     }
+    
+    func controllerDidDisappear(match: MatchMO) {
+        let gameOverScene = GameOverController(match: match)
+        gameOverScene.modalPresentationStyle = .fullScreen
+        present(gameOverScene, animated: true)
+        print("Game Over 2")
+    }
+    
 }
+
 
 extension LeagueTableController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -163,7 +171,5 @@ extension LeagueTableController: UITableViewDataSource {
         cell.matchCountLabel.text = String(userScore.winMatchCount)
         cell.pointLabel.text = String(userScore.score)
         return cell
-    }
-    
-    
+    }  
 }

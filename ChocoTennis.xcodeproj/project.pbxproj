@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DA0987A0299A61740048DE8C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA09879F299A61740048DE8C /* LaunchScreen.xib */; };
-		DA0987A2299A659C0048DE8C /* ThankYouPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0987A1299A659C0048DE8C /* ThankYouPage.xib */; };
-		DA0987A4299A6A9C0048DE8C /* ThankYouPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0987A3299A6A9C0048DE8C /* ThankYouPageController.swift */; };
+		DA0987A2299A659C0048DE8C /* GameOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0987A1299A659C0048DE8C /* GameOver.xib */; };
+		DA0987A4299A6A9C0048DE8C /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0987A3299A6A9C0048DE8C /* GameOverController.swift */; };
 		DA0987A7299A71480048DE8C /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0987A6299A71480048DE8C /* UserRepository.swift */; };
 		DA0987A9299A74300048DE8C /* MainContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0987A8299A74300048DE8C /* MainContoller.swift */; };
 		DA0987AB299A74810048DE8C /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0987AA299A74810048DE8C /* Main.xib */; };
@@ -39,8 +39,8 @@
 
 /* Begin PBXFileReference section */
 		DA09879F299A61740048DE8C /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		DA0987A1299A659C0048DE8C /* ThankYouPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThankYouPage.xib; sourceTree = "<group>"; };
-		DA0987A3299A6A9C0048DE8C /* ThankYouPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouPageController.swift; sourceTree = "<group>"; };
+		DA0987A1299A659C0048DE8C /* GameOver.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameOver.xib; sourceTree = "<group>"; };
+		DA0987A3299A6A9C0048DE8C /* GameOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 		DA0987A6299A71480048DE8C /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		DA0987A8299A74300048DE8C /* MainContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContoller.swift; sourceTree = "<group>"; };
 		DA0987AA299A74810048DE8C /* Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			children = (
 				DA60E192297818E800D7A50C /* LeagueTableController.swift */,
 				DA60E19A297829AC00D7A50C /* MathController.swift */,
-				DA0987A3299A6A9C0048DE8C /* ThankYouPageController.swift */,
+				DA0987A3299A6A9C0048DE8C /* GameOverController.swift */,
 				DA0987A8299A74300048DE8C /* MainContoller.swift */,
 				DA790B60299D04ED0011554E /* GameRuleController.swift */,
 			);
@@ -147,7 +147,7 @@
 				DAD802A42993D427008AA1E5 /* PlayerScore.xib */,
 				DAD802A62993D84D008AA1E5 /* PlayerScore.swift */,
 				DA09879F299A61740048DE8C /* LaunchScreen.xib */,
-				DA0987A1299A659C0048DE8C /* ThankYouPage.xib */,
+				DA0987A1299A659C0048DE8C /* GameOver.xib */,
 				DA0987AA299A74810048DE8C /* Main.xib */,
 				DA790B62299D05610011554E /* GameRule.xib */,
 			);
@@ -239,7 +239,7 @@
 				DA60E188297817C300D7A50C /* LaunchScreen.storyboard in Resources */,
 				DA12ACE7299133E40036CBB4 /* PlayerRatingHeaderView.xib in Resources */,
 				DAD802A52993D427008AA1E5 /* PlayerScore.xib in Resources */,
-				DA0987A2299A659C0048DE8C /* ThankYouPage.xib in Resources */,
+				DA0987A2299A659C0048DE8C /* GameOver.xib in Resources */,
 				DA60E191297818D000D7A50C /* LeagueTable.xib in Resources */,
 				DA0987A0299A61740048DE8C /* LaunchScreen.xib in Resources */,
 				DA790B63299D05610011554E /* GameRule.xib in Resources */,
@@ -263,7 +263,7 @@
 				DAB3242829815B7100448CCE /* UserMO.swift in Sources */,
 				DA0987A9299A74300048DE8C /* MainContoller.swift in Sources */,
 				DA5649CC298A9D3100F86D08 /* PlayerRatingCell.swift in Sources */,
-				DA0987A4299A6A9C0048DE8C /* ThankYouPageController.swift in Sources */,
+				DA0987A4299A6A9C0048DE8C /* GameOverController.swift in Sources */,
 				DA5649D3298AA68500F86D08 /* SWDataManager+Main.swift in Sources */,
 				DAB324252981559200448CCE /* ChocoTennis.xcdatamodeld in Sources */,
 				DA790B61299D04ED0011554E /* GameRuleController.swift in Sources */,

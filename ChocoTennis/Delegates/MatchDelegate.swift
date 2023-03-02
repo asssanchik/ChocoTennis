@@ -8,5 +8,6 @@
 import Foundation
 
 protocol MatchDelegate: NSObjectProtocol {
-    func finished()
+    func controllerWillDisappear()
+    func controllerDidDisappear(match: MatchMO)
 }
