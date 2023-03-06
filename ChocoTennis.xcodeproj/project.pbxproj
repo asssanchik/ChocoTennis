@@ -14,10 +14,10 @@
 		DA0987A9299A74300048DE8C /* MainContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0987A8299A74300048DE8C /* MainContoller.swift */; };
 		DA0987AB299A74810048DE8C /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0987AA299A74810048DE8C /* Main.xib */; };
 		DA12ACE7299133E40036CBB4 /* PlayerRatingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA12ACE6299133E40036CBB4 /* PlayerRatingHeaderView.xib */; };
+		DA466BD629B62592001DDF11 /* SWDataManager in Frameworks */ = {isa = PBXBuildFile; productRef = DA466BD529B62592001DDF11 /* SWDataManager */; };
 		DA5649CA298A9B8D00F86D08 /* PlayerRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5649C9298A9B8D00F86D08 /* PlayerRatingCell.xib */; };
 		DA5649CC298A9D3100F86D08 /* PlayerRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649CB298A9D3100F86D08 /* PlayerRatingCell.swift */; };
 		DA5649CE298AA28800F86D08 /* ScoreMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649CD298AA28800F86D08 /* ScoreMO.swift */; };
-		DA5649D1298AA62D00F86D08 /* SWDataManager in Frameworks */ = {isa = PBXBuildFile; productRef = DA5649D0298AA62D00F86D08 /* SWDataManager */; };
 		DA5649D3298AA68500F86D08 /* SWDataManager+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5649D2298AA68500F86D08 /* SWDataManager+Main.swift */; };
 		DA60E17C297817C100D7A50C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E17B297817C100D7A50C /* AppDelegate.swift */; };
 		DA60E17E297817C100D7A50C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60E17D297817C100D7A50C /* SceneDelegate.swift */; };
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA5649D1298AA62D00F86D08 /* SWDataManager in Frameworks */,
+				DA466BD629B62592001DDF11 /* SWDataManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +189,7 @@
 			);
 			name = ChocoTennis;
 			packageProductDependencies = (
-				DA5649D0298AA62D00F86D08 /* SWDataManager */,
+				DA466BD529B62592001DDF11 /* SWDataManager */,
 			);
 			productName = ChocoTennis;
 			productReference = DA60E178297817C100D7A50C /* ChocoTennis.app */;
@@ -220,7 +220,7 @@
 			);
 			mainGroup = DA60E16F297817C100D7A50C;
 			packageReferences = (
-				DA5649CF298AA62D00F86D08 /* XCRemoteSwiftPackageReference "SWDataManager" */,
+				DA466BD429B62592001DDF11 /* XCRemoteSwiftPackageReference "SWDataManager" */,
 			);
 			productRefGroup = DA60E179297817C100D7A50C /* Products */;
 			projectDirPath = "";
@@ -492,20 +492,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DA5649CF298AA62D00F86D08 /* XCRemoteSwiftPackageReference "SWDataManager" */ = {
+		DA466BD429B62592001DDF11 /* XCRemoteSwiftPackageReference "SWDataManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/0x3337/SWDataManager";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DA5649D0298AA62D00F86D08 /* SWDataManager */ = {
+		DA466BD529B62592001DDF11 /* SWDataManager */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DA5649CF298AA62D00F86D08 /* XCRemoteSwiftPackageReference "SWDataManager" */;
+			package = DA466BD429B62592001DDF11 /* XCRemoteSwiftPackageReference "SWDataManager" */;
 			productName = SWDataManager;
 		};
 /* End XCSwiftPackageProductDependency section */

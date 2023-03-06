@@ -37,18 +37,16 @@ class MainController: UIViewController {
                 "player.name",
                 .count("point", resultType: .decimalAttributeType)
             ],
-            predicate: predicate,
+            where: predicate,
             groupBy: [
                 "player.uuid",
                 "player.name"
-            ]
+            ],
+            orderBy: [
+            NSSortDescriptor(key: "count", ascending: false)
+            ],
+            limit: 1
         ) as! [[String: Any]]
-        
-        
-        userScores.sort {
-            return $0["count"] as! Int > $1["count"] as! Int
-        }
-        print(userScores)
         
         return userScores.first?["player.name"] as! String ?? "-"
     }

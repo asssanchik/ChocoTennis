@@ -11,7 +11,7 @@ import SWDataManager
 
 class UserRepository {
     static func getOrCreateUser(byName name: String) -> UserMO {
-        var user = SWDataManager.main.fetch(for: UserMO.self, format: "name = %@", name).first
+        var user = SWDataManager.main.fetch(UserMO.self, whereFormat: "name = %@", name).first
         if let user = user {
             return user
         }

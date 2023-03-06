@@ -116,9 +116,9 @@ extension LeagueTableController {
             let result = dataManager.aggregate(
                 for: ScoreMO.self,
                 attributes: [
-                    .count("point", nameAs: "winMatchCount", resultType: .decimalAttributeType)
+                    .count("point", as: "winMatchCount", resultType: .decimalAttributeType)
                 ],
-                predicate: predicate,
+                where: predicate,
                 groupBy: [
                     "player.uuid"
                 ]

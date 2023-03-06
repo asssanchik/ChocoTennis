@@ -81,7 +81,7 @@ class GameOverController: UIViewController {
                 "player.uuid",
                 .count("point", resultType: .decimalAttributeType)
             ],
-            predicate: predicate,
+            where: predicate,
             groupBy: [
                 "player.uuid"
             ]

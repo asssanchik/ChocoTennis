@@ -6,7 +6,7 @@
 //
 
 import CoreData
-
+import SWDataManager
 
 @objc(MatchMO)
 class MatchMO: NSManagedObject {
@@ -14,4 +14,10 @@ class MatchMO: NSManagedObject {
     @NSManaged var completedAt: Date
     @NSManaged var createdAt: Date
     @NSManaged var scores: Set<ScoreMO>
+}
+
+extension MatchMO: SWEntityNamable {
+    static var entityName: String {
+        return "Match"
+    }
 }

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/0x3337/SWDataManager",
       "state" : {
-        "branch" : "master",
-        "revision" : "b9872cd4cea51bbaffbf4bbe91f078fcf267e2c4"
+        "revision" : "17fb0aac4852d2693900b711e636b983d3a1803b",
+        "version" : "0.2.0"
       }
     }
   ],
